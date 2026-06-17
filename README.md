@@ -52,10 +52,15 @@ I build and evaluate intelligent systems that combine language models, retrieval
   <ol>
     <li><a href="#ai-engineer-portfolio">AI Engineer Portfolio</a></li>
     <li>
-      <a href="#the-projects">The Projects</a>
+      <strong>AI Engineering Projects</strong>
       <ul>
         <li><a href="#llm-eval-suite">LLM-Eval-Suite</a></li>
         <li><a href="#llms---document-rag-agent">LLMs - Document RAG Agent</a></li>
+      </ul>
+    </li>
+    <li>
+      <strong>Data Science Projects</strong>
+      <ul>
         <li><a href="#classification---credit-card-churn-prediction">Classification - Credit Card Churn Prediction</a></li>
         <li><a href="#classification---credit-risk-classification">Classification - Credit Risk Classification</a></li>
         <li><a href="#clustering-project">Clustering Project</a></li>
