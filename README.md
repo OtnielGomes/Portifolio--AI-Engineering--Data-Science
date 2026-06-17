@@ -16,7 +16,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/OtnielGomes/Data_Science_Portfolio">
+  <a href="https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science">
     <img src="images/ia_engineer.png" alt="AI Engineer Portfolio" width="1000" height="400">
   </a>
 
@@ -144,7 +144,7 @@ The project uses a **hybrid inference architecture**: Ollama Cloud for generatio
 ---
 
 <div align="center">
-  <a href="https://github.com/OtnielGomes/Data_Science_Portfolio">
+  <a href="https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science">
     <img src="images/document_rag_agent/project_cover.png" alt="Project Cover" width="1000" height="350">
   </a>
 </div>
@@ -173,7 +173,7 @@ This workflow also made it possible to manually evaluate the **answer accuracy**
 
 The entire process is recorded in the video below:
 
-[![Demonstration](https://github.com/OtnielGomes/Data_Science_Portfolio/blob/main/images/document_rag_agent/video.png)](https://canva.link/zjmai0hdpe9v8lf)
+[![Demonstration](https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science/blob/main/images/document_rag_agent/video.png)](https://canva.link/zjmai0hdpe9v8lf)
 
 <br/>
 
@@ -401,7 +401,7 @@ Contributions are what make the open source community such an amazing place to l
 
 ### Top contributors:
 
-<a href="https://github.com/OtnielGomes/Data_Science_Portfolio/graphs/contributors">
+<a href="https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=OtnielGomes/Data_Science_Portfolio" alt="contrib.rocks image" />
 </a>
 
@@ -409,7 +409,7 @@ Contributions are what make the open source community such an amazing place to l
 
 ## License
 
-Distributed under the MIT License. See [`LICENSE.txt`](https://github.com/OtnielGomes/Data_Science_Portfolio/blob/main/LICENSE) for more information.
+Distributed under the MIT License. See [`LICENSE.txt`](https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science/blob/main/LICENSE) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
