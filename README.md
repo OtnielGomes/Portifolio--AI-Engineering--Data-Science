@@ -69,7 +69,7 @@ I build and evaluate intelligent systems that combine language models, retrieval
 
 <br />
 
-## The Projects:
+## The Projects of AI Engineering:
 
 <br/>
 
@@ -206,6 +206,11 @@ The entire process is recorded in the video below:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <br/>
+<br/>
+
+
+## The Projects of Data Science:
+
 <br/>
 
 ---
