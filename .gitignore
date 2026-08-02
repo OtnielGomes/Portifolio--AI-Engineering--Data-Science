@@ -6,6 +6,7 @@ skills-lock.json
 .cursor/*
 !.cursor/rules/
 !.cursor/rules/**
+AGENTS.md
 
 # Secrets & local env
 .env
