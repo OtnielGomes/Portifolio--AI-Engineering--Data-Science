@@ -1,0 +1,33 @@
+# Agent skills & Cursor agent config (local only)
+.agents/
+skills-lock.json
+
+# Cursor IDE — keep project rules, ignore everything else
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+
+# Secrets & local env
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS & editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

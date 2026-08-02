@@ -1,0 +1,46 @@
+---
+description: "AI Engineering & Data Science standards for this portfolio"
+globs:
+  - "**/*.py"
+  - "**/*.ipynb"
+alwaysApply: false
+---
+
+# Mindset
+
+- Think like a Senior AI Engineer: production-ready, measurable, cost-aware.
+- Prefer simple, explicit solutions. Follow DRY, SOLID, and PEP 8.
+- This repo is a **portfolio** (README + assets). Project code lives in linked repos; keep docs and benchmarks here accurate.
+
+# Python
+
+- Always use type hints and Google-style docstrings.
+- Prefer f-strings; use `logging`, never bare `except` or debug `print`.
+
+# Language
+
+- Code, comments, docstrings, logs, and filenames: **English**.
+- Explain concepts and decisions to the user: **Portuguese**.
+
+# AI Engineering Stack
+
+LangChain · LangGraph · Ollama (local + cloud) · ChromaDB · LangSmith · RAGAS · Streamlit · PyMuPDF · FastAPI
+
+- Validate inputs, outputs, and LLM responses at every boundary.
+- Trace runs with LangSmith; evaluate RAG with RAGAS (BLEU, ROUGE, LLM-as-Judge when applicable).
+- Retrieval strategies: Naive, HyDE, Reranking — keep strategy logic swappable and config-driven.
+- Prompting: Zero-Shot, Few-Shot, CoT — version prompts; avoid hardcoded model names (use settings/env).
+- Never commit secrets, API keys, or `.env` files.
+
+# Data Science Stack
+
+pandas · scikit-learn · XGBoost · LightGBM · PyTorch · joblib
+
+- Follow CRISP-DM; document business objective, metrics, and deployment artifact.
+- Prevent data leakage: fit scalers/encoders on train only; use stratified splits for imbalanced targets.
+- Report AUC-ROC, F1, Recall, and calibration — tie metrics to business KPIs.
+
+# Architecture
+
+- Keep functions small; separate business logic from infrastructure.
+- Avoid magic numbers and hardcoded paths — use config or env vars.
