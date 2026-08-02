@@ -80,6 +80,96 @@ I build and evaluate intelligent systems that combine language models, retrieval
 
 ---
 
+## AI-Agent-with-Docker-Containers-and-Python 🧪
+
+#### Project complete: [Click here to check the complete project](https://github.com/OtnielGomes/AI-Agent-with-Docker-Containers-and-Python)
+
+---
+
+<div align="center">
+  <a href="https://github.com/OtnielGomes/AI-Agent-with-Docker-Containers-and-Python">
+    <img src="images/ai-agent_email/project_cover.png" alt="ai-agent_email" width="900" height="350">
+  </a>
+</div>
+
+---
+
+### 📃 Project Description
+
+A **LangGraph multi-agent** chat assistant that researches content, reads your inbox, and sends emails via Gmail. **FastAPI** backend, **Streamlit** UI, and **PostgreSQL** persistence — all orchestrated with **Docker Compose** and ready to deploy on platforms like **DigitalOcean App Platform**.
+
+---
+
+### 🏗️ Architecture
+
+```mermaid
+flowchart TB
+    UI[Streamlit frontend] -->|POST /api/chats/| API[FastAPI]
+    Client[HTTP client] -->|POST /api/chats/| API
+    API --> DB[(PostgreSQL)]
+    API --> Supervisor[LangGraph supervisor]
+    Supervisor --> Research[research_agent]
+    Supervisor --> Email[email_agent]
+    Research -->|research_email| LLM[OpenAI]
+    Email -->|send_me_email| SMTP[Gmail SMTP]
+    Email -->|get_recent_emails| IMAP[Gmail IMAP]
+    Supervisor --> API
+    API --> UI
+    API --> Client
+```
+
+| Layer | Technology | Responsibility |
+|-------|------------|----------------|
+| API | FastAPI, uvicorn | HTTP routes, validation, persistence |
+| Agents | LangGraph, langgraph-supervisor | Supervisor + workers (research, email) |
+| LLM | langchain-openai | Structured email generation |
+| Email | smtplib, IMAP | Send and read via Gmail |
+| Database | SQLModel, PostgreSQL | Chat message history |
+| UI | Streamlit | Chat, recipient settings, prompts |
+| Containers | Docker Compose | Local orchestration and production base |
+
+---
+
+### 📊 Agent interface
+
+Sidebar with connection test, recipient choice (*send to myself* or *other email*), and pre-built prompts.
+
+![Agent interface](./images/ai-agent_email/interface_of_agent.png)
+
+### Summarize recent emails
+
+Request: *"Summarize my last 3 emails."* — the agent reads the inbox and returns a structured summary.
+
+![Email summarization test](./images/ai-agent_email/test_of__prompt_summarize-emails.png)
+
+### Schedule a meeting by email
+
+Request: *"Help me write an email to schedule a meeting for this week."*
+
+<table>
+  <tr>
+    <td width="50%"><img src="./images/ai-agent_email/test_send_email_1.png" alt="Meeting scheduling prompt" /></td>
+    <td width="50%"><img src="./images/ai-agent_email/result_of_test_send_email_1.png" alt="Meeting email result" /></td>
+  </tr>
+</table>
+
+### Email about Artificial Intelligence
+
+Request: *"Write me an email about artificial intelligence applied to business."*
+
+<table>
+  <tr>
+    <td width="50%"><img src="./images/ai-agent_email/test_send_email_2.png" alt="AI prompt" /></td>
+    <td width="50%"><img src="./images/ai-agent_email/result_of_test_send_email_2.png" alt="AI email result" /></td>
+  </tr>
+</table>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br/>
+<br/>
+
+---
+
 ## LLM-Eval-Suite 🧪
 
 #### Project complete: [Click here to check the complete project](https://github.com/OtnielGomes/LLM-Eval-Suite)
@@ -88,7 +178,7 @@ I build and evaluate intelligent systems that combine language models, retrieval
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/LLM-Eval-Suite">
-    <img src="images/llm_eval/project_cover.png" alt="LLM Eval Suite" width="1000" height="350">
+    <img src="images/llm_eval/project_cover.png" alt="LLM Eval Suite" width="900" height="350">
   </a>
 </div>
 
@@ -150,7 +240,7 @@ The project uses a **hybrid inference architecture**: Ollama Cloud for generatio
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science">
-    <img src="images/document_rag_agent/project_cover.png" alt="Project Cover" width="1000" height="350">
+    <img src="images/document_rag_agent/project_cover.png" alt="Project Cover" width="900" height="350">
   </a>
 </div>
 
@@ -228,7 +318,7 @@ The entire process is recorded in the video below:
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/Data_Science_Portfolio">
-    <img src="images/churn_predction/project_cover.png" alt="Churn Prediction" width="1000" height="350">
+    <img src="images/churn_predction/project_cover.png" alt="Churn Prediction" width="900" height="350">
   </a>
 </div>
 
