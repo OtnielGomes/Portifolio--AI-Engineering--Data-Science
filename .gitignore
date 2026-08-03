@@ -2,8 +2,13 @@
 .agents/
 skills-lock.json
 
+<<<<<<< HEAD
 # Cursor IDE — keep project rules, ignore everything else
 .cursor
+=======
+# Cursor IDE — local config only (never push to public repo)
+.cursor/
+>>>>>>> 4bf83de (docs: reorganize portfolio README)
 AGENTS.md
 
 # Secrets & local env
