@@ -3,7 +3,7 @@
 skills-lock.json
 
 # Cursor IDE — keep project rules, ignore everything else
-.cursor/*
+.cursor
 AGENTS.md
 
 # Secrets & local env
