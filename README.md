@@ -444,6 +444,9 @@ Request: *"Write me an email about artificial intelligence applied to business."
   <img src="images/credit_risk/test_matrix.png" alt="Confusion matrix on test data" width="300">
 </div>
 
+<details>
+<summary>View additional assets</summary>
+
 ### Example Classifier Output
 
 ```text
@@ -459,13 +462,6 @@ dti: 27.65 >>>> Not OK
 
 ### sub_grade ###: B2 >>>> OK
 ```
-
-<details>
-<summary>View additional assets</summary>
-
-<img src="images/credit_risk/logo.jpg" alt="Lending Club logo" width="500">
-
-</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
