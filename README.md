@@ -1,23 +1,22 @@
 <a id="readme-top"></a>
 
+**Language:** English | [Português](README.pt-BR.md)
+
 <div align="center">
+  <h1>AI Engineer Portfolio</h1>
+  <p><strong>Otniel Gomes</strong> — I build and evaluate LLM-powered systems<br />with measurable quality, latency, and observability.</p>
+  <p>
+    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+    <a href="https://www.langchain.com/langgraph"><img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangGraph"></a>
+    <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"></a>
+    <a href="https://docs.ragas.io/"><img src="https://img.shields.io/badge/RAGAS-6366F1?style=for-the-badge" alt="RAGAS"></a>
+    <a href="https://pytorch.org"><img src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch"></a>
+    <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a>
+    <a href="https://linkedin.com/in/otnielgomes"><img src="https://img.shields.io/badge/-LinkedIn-0077B5.svg?style=for-the-badge&logo=linkedin&colorB=0077B5" alt="LinkedIn"></a>
+  </p>
   <a href="https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science">
     <img src="images/ia_engineer.png" alt="AI Engineer Portfolio" width="900">
   </a>
-
-  <h1>AI Engineer Portfolio</h1>
-
-  <p><strong>Otniel Gomes</strong> — I build and evaluate LLM-powered systems<br />with measurable quality, latency, and observability.</p>
-
-  **Language:** English | [Português](README.pt-BR.md)
-
-  [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-  [![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://www.langchain.com/langgraph)
-  [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-  [![RAGAS](https://img.shields.io/badge/RAGAS-6366F1?style=for-the-badge)](https://docs.ragas.io/)
-  [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)](https://pytorch.org)
-  [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-  [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5.svg?style=for-the-badge&logo=linkedin&colorB=0077B5)](https://linkedin.com/in/otnielgomes)
 </div>
 
 ---
@@ -35,6 +34,20 @@ Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and col
 
 ---
 
+## Project index
+
+| Project | Problem | Stack | Highlight |
+|---|---|---|---|
+| [AI Customer Support Platform](projects/ai-customer-support-platform.md) | Answer about real orders without hallucinating, and escalate when policy forbids acting | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Multi-agent supervisor with deterministic policy engine and human-in-the-loop |
+| [AI Agent with Docker](projects/ai-agent-email-docker.md) | Automate email research, inbox reading, and sending | LangGraph, FastAPI, PostgreSQL, Streamlit, Docker | Deployed on DigitalOcean App Platform |
+| [PGD Teletrabalho](projects/pgd-teletrabalho.md) | Answer current telework rules from the act in force, or refuse | FastAPI, Next.js, PostgreSQL, Docker | Citation gate; **89** pytest passed |
+| [LLM-Eval-Suite](projects/llm-eval-suite.md) | Compare LLMs and RAG strategies objectively | Ollama, ChromaDB, RAGAS, LangSmith | **0.988** composite RAGAS (HyDE, Gemma3 27B) |
+| [Credit Card Churn Prediction](projects/churn-prediction-credit-card.md) | Identify credit-card customers at risk of leaving | XGBoost, LightGBM, scikit-learn, SHAP | End-to-end CRISP-DM pipeline with explainability |
+| [Credit Risk Classification](projects/credit-risk-classification.md) | Classify loan default risk at application time | PyTorch, Azure Databricks | **71.08%** AUC-ROC on test data |
+| [Customer Segmentation](projects/clustering-segmentation.md) | Discover natural groupings in customer data | scikit-learn, CRISP-DM | In progress |
+
+---
+
 ## Featured project
 
 ### [AI Customer Support Platform](projects/ai-customer-support-platform.md) 🎧
@@ -48,20 +61,6 @@ A LangGraph **supervisor** routes each support ticket to billing, logistics, or 
 Two surfaces: a Customer Portal for shoppers and a Support Console where a human takes over an escalated ticket in the same thread, with the assistant's tool trail visible. Deployed on DigitalOcean App Platform with OpenTelemetry and Langfuse tracing.
 
 **[Read the full case study →](projects/ai-customer-support-platform.md)** · [Source repository](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph)
-
----
-
-## Project index
-
-| Project | Problem | Stack | Highlight |
-|---|---|---|---|
-| [AI Customer Support Platform](projects/ai-customer-support-platform.md) | Answer about real orders without hallucinating, and escalate when policy forbids acting | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Multi-agent supervisor with deterministic policy engine and human-in-the-loop |
-| [AI Agent with Docker](projects/ai-agent-email-docker.md) | Automate email research, inbox reading, and sending | LangGraph, FastAPI, PostgreSQL, Streamlit, Docker | Deployed on DigitalOcean App Platform |
-| [PGD Teletrabalho](projects/pgd-teletrabalho.md) | Answer current telework rules from the act in force, or refuse | FastAPI, Next.js, PostgreSQL, Docker | Citation gate; **89** pytest passed |
-| [LLM-Eval-Suite](projects/llm-eval-suite.md) | Compare LLMs and RAG strategies objectively | Ollama, ChromaDB, RAGAS, LangSmith | **0.988** composite RAGAS (HyDE, Gemma3 27B) |
-| [Credit Card Churn Prediction](projects/churn-prediction-credit-card.md) | Identify credit-card customers at risk of leaving | XGBoost, LightGBM, scikit-learn, SHAP | End-to-end CRISP-DM pipeline with explainability |
-| [Credit Risk Classification](projects/credit-risk-classification.md) | Classify loan default risk at application time | PyTorch, Azure Databricks | **71.08%** AUC-ROC on test data |
-| [Customer Segmentation](projects/clustering-segmentation.md) | Discover natural groupings in customer data | scikit-learn, CRISP-DM | In progress |
 
 ---
 
