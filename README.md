@@ -57,8 +57,8 @@ Two surfaces: a Customer Portal for shoppers and a Support Console where a human
 |---|---|---|---|
 | [AI Customer Support Platform](projects/ai-customer-support-platform.md) | Answer about real orders without hallucinating, and escalate when policy forbids acting | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Multi-agent supervisor with deterministic policy engine and human-in-the-loop |
 | [AI Agent with Docker](projects/ai-agent-email-docker.md) | Automate email research, inbox reading, and sending | LangGraph, FastAPI, PostgreSQL, Streamlit, Docker | Deployed on DigitalOcean App Platform |
-| [LLM-Eval-Suite](projects/llm-eval-suite.md) | Compare LLMs and RAG strategies objectively | Ollama, ChromaDB, RAGAS, LangSmith | **0.988** composite RAGAS (HyDE, Gemma3 27B) |
 | [PGD Teletrabalho](projects/pgd-teletrabalho.md) | Answer current telework rules from the act in force, or refuse | FastAPI, Next.js, PostgreSQL, Docker | Citation gate; **89** pytest passed |
+| [LLM-Eval-Suite](projects/llm-eval-suite.md) | Compare LLMs and RAG strategies objectively | Ollama, ChromaDB, RAGAS, LangSmith | **0.988** composite RAGAS (HyDE, Gemma3 27B) |
 | [Credit Card Churn Prediction](projects/churn-prediction-credit-card.md) | Identify credit-card customers at risk of leaving | XGBoost, LightGBM, scikit-learn, SHAP | End-to-end CRISP-DM pipeline with explainability |
 | [Credit Risk Classification](projects/credit-risk-classification.md) | Classify loan default risk at application time | PyTorch, Azure Databricks | **71.08%** AUC-ROC on test data |
 | [Customer Segmentation](projects/clustering-segmentation.md) | Discover natural groupings in customer data | scikit-learn, CRISP-DM | In progress |
@@ -79,20 +79,6 @@ Manual email workflows — researching a topic, reading the inbox, drafting a re
 
 ---
 
-### [LLM-Eval-Suite](projects/llm-eval-suite.md) 🧪
-
-<a href="projects/llm-eval-suite.md">
-  <img src="images/llm-eval/project_cover.png" alt="LLM Eval Suite" width="900">
-</a>
-
-Picking a model and a retrieval strategy by intuition does not survive review. This benchmark compares prompting strategies (Zero-Shot, Few-Shot, CoT) and RAG strategies (Naive, HyDE, Reranking) across models using BLEU, ROUGE, LLM-as-Judge, and RAGAS, traced end to end in LangSmith.
-
-Best composite RAGAS score: **0.988** with HyDE on Gemma3 27B. Best prompting accuracy: **89.3%** mean with Qwen3-Coder 480B.
-
-**[Read more →](projects/llm-eval-suite.md)** · [Source repository](https://github.com/OtnielGomes/LLM-Eval-Suite)
-
----
-
 ### [PGD Teletrabalho](projects/pgd-teletrabalho.md) 📜
 
 <a href="projects/pgd-teletrabalho.md">
@@ -104,6 +90,20 @@ A Unifesp servidor asking about telework needs the rule that is actually in forc
 **89** pytest passed with the extractive draft and an empty API key, including a human-annotated golden set of **43** items. Corpus cutoff: **18 September 2026**.
 
 **[Read more →](projects/pgd-teletrabalho.md)** · [Source repository](https://github.com/OtnielGomes/Enterprise-Knowledge---RAG-Platform)
+
+---
+
+### [LLM-Eval-Suite](projects/llm-eval-suite.md) 🧪
+
+<a href="projects/llm-eval-suite.md">
+  <img src="images/llm-eval/project_cover.png" alt="LLM Eval Suite" width="900">
+</a>
+
+Picking a model and a retrieval strategy by intuition does not survive review. This benchmark compares prompting strategies (Zero-Shot, Few-Shot, CoT) and RAG strategies (Naive, HyDE, Reranking) across models using BLEU, ROUGE, LLM-as-Judge, and RAGAS, traced end to end in LangSmith.
+
+Best composite RAGAS score: **0.988** with HyDE on Gemma3 27B. Best prompting accuracy: **89.3%** mean with Qwen3-Coder 480B.
+
+**[Read more →](projects/llm-eval-suite.md)** · [Source repository](https://github.com/OtnielGomes/LLM-Eval-Suite)
 
 ---
 
