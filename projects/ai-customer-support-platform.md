@@ -16,7 +16,7 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph">
-    <img src="../images/AI-Customer-Support-Platform-With-Langgraph/project_cover.png" alt="AI Customer Support Platform project cover" width="900">
+    <img src="../images/ai-customer-support-platform-with-langgraph/project_cover.png" alt="AI Customer Support Platform project cover" width="900">
   </a>
 </div>
 
@@ -89,17 +89,17 @@ Every tool is bound to the ticket's customer, so a worker cannot read another cu
 
 Email-only login. Unknown addresses are rejected; the portal never creates customers on the fly.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/interface-portal-customer_EN.png" alt="Customer portal login" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/interface-portal-customer_EN.png" alt="Customer portal login" width="900">
 
 After sign-in the portal recognizes the customer's orders and opens a live chat from the same screen.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/portal-customer-orders_EN.png" alt="Customer home with orders" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/portal-customer-orders_EN.png" alt="Customer home with orders" width="900">
 
 Routine questions — estimated delivery, payment status, items — are answered from PostgreSQL rows.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/order-interaction-0_EN.png" alt="Assistant answering when an order will arrive" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/order-interaction-0_EN.png" alt="Assistant answering when an order will arrive" width="900">
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/order-interaction-1.png" alt="Order follow-up in the chat" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/order-interaction-1.png" alt="Order follow-up in the chat" width="900">
 
 </details>
 
@@ -108,13 +108,13 @@ Routine questions — estimated delivery, payment status, items — are answered
 
 When automation cannot resolve the case — a payment mismatch, an identity check, a refund outside the policy window — the ticket escalates and a human continues in the same thread. The customer sees one conversation, not a handoff.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/order-interaction-3-human-intervection.png" alt="Escalation raised in the portal" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/order-interaction-3-human-intervection.png" alt="Escalation raised in the portal" width="900">
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/order-interaction-4-human-intervection_EN.png" alt="Human reply inside the portal thread" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/order-interaction-4-human-intervection_EN.png" alt="Human reply inside the portal thread" width="900">
 
 A high-value refund is not executed by the assistant. The policy engine returns the verdict, and the request goes to a person.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/reimbursement-simulation-human-intervection.png" alt="Refund request forwarded to a human" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/reimbursement-simulation-human-intervection.png" alt="Refund request forwarded to a human" width="900">
 
 </details>
 
@@ -123,13 +123,13 @@ A high-value refund is not executed by the assistant. The policy engine returns 
 
 A dark-themed console for the support team: live inbox, ticket list, and takeover.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/interface-portal-console-suport.png" alt="Support console inbox" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/interface-portal-console-suport.png" alt="Support console inbox" width="900">
 
 On an escalated ticket the agent sees the transcript, the order summary, and the trail of tools the assistant already ran before taking over.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/chat-console-suport_EN.png" alt="Human takeover with order context and tool trace" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/chat-console-suport_EN.png" alt="Human takeover with order context and tool trace" width="900">
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/recent-chats.png" alt="Recent conversations in the console" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/recent-chats.png" alt="Recent conversations in the console" width="900">
 
 </details>
 
@@ -138,7 +138,7 @@ On an escalated ticket the agent sees the transcript, the order summary, and the
 
 Ticket volume, escalation rate, average confidence, run latency, intent mix, and per-tool error rate and p95 latency.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/analytics.png" alt="Analytics console with escalation rate, latency, and tool calls" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/analytics.png" alt="Analytics console with escalation rate, latency, and tool calls" width="900">
 
 </details>
 
@@ -147,9 +147,9 @@ Ticket volume, escalation rate, average confidence, run latency, intent mix, and
 
 Attempts to override the assistant's instructions are refused. It stays on policy and escalates rather than executing an unauthorized refund.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/jailbreak-simulation_EN.png" alt="Jailbreak attempt refused" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/jailbreak-simulation_EN.png" alt="Jailbreak attempt refused" width="900">
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/prompt-injection-simulation-0.png" alt="Prompt injection attempt refused" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/prompt-injection-simulation-0.png" alt="Prompt injection attempt refused" width="900">
 
 </details>
 
@@ -158,7 +158,7 @@ Attempts to override the assistant's instructions are refused. It stays on polic
 
 The same stack split into separate services: FastAPI + LangGraph API, Next.js web, PostgreSQL with pgvector, Valkey for cache and chat pub/sub, and seed/ingest jobs for the synthetic data and knowledge base.
 
-<img src="../images/AI-Customer-Support-Platform-With-Langgraph/deploy-components.png" alt="DigitalOcean App Platform components" width="900">
+<img src="../images/ai-customer-support-platform-with-langgraph/deploy-components.png" alt="DigitalOcean App Platform components" width="900">
 
 </details>
 

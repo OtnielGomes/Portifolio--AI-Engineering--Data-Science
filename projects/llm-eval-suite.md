@@ -13,7 +13,7 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/LLM-Eval-Suite">
-    <img src="../images/llm_eval/project_cover.png" alt="LLM Eval Suite project cover" width="900">
+    <img src="../images/llm-eval/project_cover.png" alt="LLM Eval Suite project cover" width="900">
   </a>
 </div>
 
@@ -34,7 +34,7 @@
 
 ## Results — Prompting accuracy
 
-![Accuracy per Strategy × Model](../images/llm_eval/benchmark_accuracy_grouped.png)
+![Accuracy per Strategy × Model](../images/llm-eval/benchmark_accuracy_grouped.png)
 
 | Model | Zero-Shot | Few-Shot | CoT | Mean |
 |---|---|---|---|---|
@@ -44,7 +44,7 @@
 
 ## Results — RAG composite RAGAS score
 
-![Composite RAGAS Score per Strategy × Model](../images/llm_eval/rag_composite_grouped.png)
+![Composite RAGAS Score per Strategy × Model](../images/llm-eval/rag_composite_grouped.png)
 
 | Model | Naive | HyDE | Reranking | Mean |
 |---|---|---|---|---|
@@ -54,24 +54,24 @@
 
 ## Results — Latency
 
-![Benchmark latency](../images/llm_eval/benchmark_latency.png)
+![Benchmark latency](../images/llm-eval/benchmark_latency.png)
 
 <details>
 <summary>View detailed benchmark charts</summary>
 
-![Accuracy heatmap](../images/llm_eval/benchmark_accuracy_heatmap.png)
+![Accuracy heatmap](../images/llm-eval/benchmark_accuracy_heatmap.png)
 
-![ROUGE-L heatmap](../images/llm_eval/benchmark_rougeL_heatmap.png)
+![ROUGE-L heatmap](../images/llm-eval/benchmark_rougeL_heatmap.png)
 
-![LLM-as-Judge heatmap](../images/llm_eval/benchmark_judge_heatmap.png)
+![LLM-as-Judge heatmap](../images/llm-eval/benchmark_judge_heatmap.png)
 
-![RAG composite heatmap](../images/llm_eval/rag_composite_heatmap.png)
+![RAG composite heatmap](../images/llm-eval/rag_composite_heatmap.png)
 
-![RAG heatmaps overview](../images/llm_eval/rag_heatmaps.png)
+![RAG heatmaps overview](../images/llm-eval/rag_heatmaps.png)
 
-![RAG radar per model](../images/llm_eval/rag_radar_per_model.png)
+![RAG radar per model](../images/llm-eval/rag_radar_per_model.png)
 
-![RAG recall distribution](../images/llm_eval/rag_recall_dist.png)
+![RAG recall distribution](../images/llm-eval/rag_recall_dist.png)
 
 </details>
 

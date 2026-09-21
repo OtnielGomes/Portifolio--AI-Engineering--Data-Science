@@ -14,7 +14,7 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/AI-Agent-with-Docker-Containers-and-Python">
-    <img src="../images/ai-agent_email/project_cover.png" alt="AI Agent with Docker project cover" width="900">
+    <img src="../images/ai-agent-email/project_cover.png" alt="AI Agent with Docker project cover" width="900">
   </a>
 </div>
 
@@ -61,13 +61,13 @@ flowchart TB
 
 Sidebar with connection test, recipient choice (*send to myself* or *other email*), and pre-built prompts.
 
-![Agent interface](../images/ai-agent_email/interface_of_agent.png)
+![Agent interface](../images/ai-agent-email/interface_of_agent.png)
 
 ### Summarize recent emails
 
 Request: *"Summarize my last 3 emails."* — the agent reads the inbox and returns a structured summary.
 
-![Email summarization test](../images/ai-agent_email/test_of__prompt_summarize-emails.png)
+![Email summarization test](../images/ai-agent-email/test_of__prompt_summarize-emails.png)
 
 ### Schedule a meeting by email
 
@@ -75,8 +75,8 @@ Request: *"Help me write an email to schedule a meeting for this week."*
 
 <table>
   <tr>
-    <td width="50%"><img src="../images/ai-agent_email/test_send_email_1.png" alt="Meeting scheduling prompt" /></td>
-    <td width="50%"><img src="../images/ai-agent_email/result_of_test_send_email_1.png" alt="Meeting email result" /></td>
+    <td width="50%"><img src="../images/ai-agent-email/test_send_email_1.png" alt="Meeting scheduling prompt" /></td>
+    <td width="50%"><img src="../images/ai-agent-email/result_of_test_send_email_1.png" alt="Meeting email result" /></td>
   </tr>
 </table>
 
@@ -86,20 +86,20 @@ Request: *"Write me an email about artificial intelligence applied to business."
 
 <table>
   <tr>
-    <td width="50%"><img src="../images/ai-agent_email/test_send_email_2.png" alt="AI prompt" /></td>
-    <td width="50%"><img src="../images/ai-agent_email/result_of_test_send_email_2.png" alt="AI email result" /></td>
+    <td width="50%"><img src="../images/ai-agent-email/test_send_email_2.png" alt="AI prompt" /></td>
+    <td width="50%"><img src="../images/ai-agent-email/result_of_test_send_email_2.png" alt="AI email result" /></td>
   </tr>
 </table>
 
 ### Deployment on DigitalOcean
 
-![DigitalOcean deployment](../images/ai-agent_email/deploy-digital-ocean.png)
+![DigitalOcean deployment](../images/ai-agent-email/deploy-digital-ocean.png)
 
-![Deployed interface](../images/ai-agent_email/interface_deploy_digital-ocean.png)
+![Deployed interface](../images/ai-agent-email/interface_deploy_digital-ocean.png)
 
 ### Runtime logs
 
-![Runtime logs](../images/ai-agent_email/runtimeslogs.png)
+![Runtime logs](../images/ai-agent-email/runtimeslogs.png)
 
 </details>
 

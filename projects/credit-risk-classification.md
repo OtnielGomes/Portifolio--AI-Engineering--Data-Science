@@ -11,7 +11,7 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/0_Portfolio-Credit_Risk_Analysis_with_Pytorch">
-    <img src="../images/credit_risk/logoLC.jpeg" alt="Credit Risk Classification project cover" width="900">
+    <img src="../images/credit-risk/logoLC.jpeg" alt="Credit Risk Classification project cover" width="900">
   </a>
 </div>
 
@@ -43,11 +43,11 @@
 | **Recall** | 63.87% |
 
 <div align="left">
-  <img src="../images/credit_risk/scores_models.png" alt="Model scores on validation data" width="900">
+  <img src="../images/credit-risk/scores_models.png" alt="Model scores on validation data" width="900">
 </div>
 
 <div align="left">
-  <img src="../images/credit_risk/test_matrix.png" alt="Confusion matrix on test data" width="300">
+  <img src="../images/credit-risk/test_matrix.png" alt="Confusion matrix on test data" width="300">
 </div>
 
 <details>

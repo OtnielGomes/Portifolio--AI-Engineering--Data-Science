@@ -12,7 +12,7 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/Churn-Prediction-Credit-Card">
-    <img src="../images/churn_predction/project_cover.png" alt="Churn Prediction project cover" width="900">
+    <img src="../images/churn-predction/project_cover.png" alt="Churn Prediction project cover" width="900">
   </a>
 </div>
 
@@ -36,7 +36,7 @@
 ## Final model — test data
 
 <div align="center">
-  <img src="../images/churn_predction/evaluation.png" alt="Final model evaluation" width="500">
+  <img src="../images/churn-predction/evaluation.png" alt="Final model evaluation" width="500">
 </div>
 
 <details>
@@ -44,37 +44,37 @@
 
 ### Numerical & categorical variables
 
-<img src="../images/churn_predction/hist_bi.png" alt="Histograms" width="900">
+<img src="../images/churn-predction/hist_bi.png" alt="Histograms" width="900">
 <br />
-<img src="../images/churn_predction/count_bi.png" alt="Count plots" width="900">
+<img src="../images/churn-predction/count_bi.png" alt="Count plots" width="900">
 
 ### Churn rate — training data
 
 <div align="center">
-  <img src="../images/churn_predction/target_count.png" alt="Target count" width="900">
+  <img src="../images/churn-predction/target_count.png" alt="Target count" width="900">
 </div>
 
 ### Model scores on validation data
 
-<img src="../images/churn_predction/scores_models.png" alt="Model scores" width="900">
+<img src="../images/churn-predction/scores_models.png" alt="Model scores" width="900">
 
 ### Probability distribution & SHAP
 
-<img src="../images/churn_predction/probabilities.png" alt="Probabilities" width="900">
+<img src="../images/churn-predction/probabilities.png" alt="Probabilities" width="900">
 <br />
-<img src="../images/churn_predction/shap_val_1.png" alt="SHAP values" width="900">
+<img src="../images/churn-predction/shap_val_1.png" alt="SHAP values" width="900">
 <br />
-<img src="../images/churn_predction/shap_val.png" alt="SHAP summary" width="900">
+<img src="../images/churn-predction/shap_val.png" alt="SHAP summary" width="900">
 
 ### Correlation analysis
 
-<img src="../images/churn_predction/corr_bi.png" alt="Correlation matrix" width="900">
+<img src="../images/churn-predction/corr_bi.png" alt="Correlation matrix" width="900">
 
 ### Deployment artifacts
 
-<img src="../images/churn_predction/function_deploy.png" alt="Deployment function" width="900">
+<img src="../images/churn-predction/function_deploy.png" alt="Deployment function" width="900">
 <br />
-<img src="../images/churn_predction/output_deploy.png" alt="Deployment output" width="900">
+<img src="../images/churn-predction/output_deploy.png" alt="Deployment output" width="900">
 
 </details>
 
