@@ -52,9 +52,11 @@ Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and col
 
 ### [AI Customer Support Platform](projects/ai-customer-support-platform.md) 🎧
 
-<a href="projects/ai-customer-support-platform.md">
-  <img src="images/ai-customer-support-platform-with-langgraph/project_cover.png" alt="AI Customer Support Platform" width="900">
-</a>
+<p align="center">
+  <a href="projects/ai-customer-support-platform.md">
+    <img src="images/ai-customer-support-platform-with-langgraph/project_cover.png" alt="AI Customer Support Platform" width="450">
+  </a>
+</p>
 
 A LangGraph **supervisor** routes each support ticket to billing, logistics, or account workers. Those workers read order facts from **PostgreSQL**, retrieve procedures through **RAG over pgvector**, and run a **deterministic policy engine** before any refund or cancellation — so the assistant never invents order state and never approves what the policy forbids.
 
@@ -68,9 +70,11 @@ Two surfaces: a Customer Portal for shoppers and a Support Console where a human
 
 ### [AI Agent with Docker Containers and Python](projects/ai-agent-email-docker.md) 🤖
 
-<a href="projects/ai-agent-email-docker.md">
-  <img src="images/ai-agent-email/project_cover.png" alt="AI Agent with Docker" width="900">
-</a>
+<p align="center">
+  <a href="projects/ai-agent-email-docker.md">
+    <img src="images/ai-agent-email/project_cover.png" alt="AI Agent with Docker" width="450">
+  </a>
+</p>
 
 Manual email workflows — researching a topic, reading the inbox, drafting a reply — are slow and repetitive. A **LangGraph supervisor** routes work to research and email agents, with FastAPI serving the API, PostgreSQL keeping chat history, and Streamlit for the UI. Packaged with Docker Compose and deployed on DigitalOcean App Platform.
 
@@ -80,9 +84,11 @@ Manual email workflows — researching a topic, reading the inbox, drafting a re
 
 ### [PGD Teletrabalho](projects/pgd-teletrabalho.md) 📜
 
-<a href="projects/pgd-teletrabalho.md">
-  <img src="images/pgd-teletrabalho/project_cover.png" alt="PGD Teletrabalho" width="900">
-</a>
+<p align="center">
+  <a href="projects/pgd-teletrabalho.md">
+    <img src="images/pgd-teletrabalho/project_cover.png" alt="PGD Teletrabalho" width="450">
+  </a>
+</p>
 
 A Unifesp servidor asking about telework needs the rule that is actually in force, with an article they can open. **Ask** retrieves from a dated snapshot of five normative acts, drafts an answer, then a **deterministic citation gate** keeps only citations whose article was retrieved. What the snapshot cannot support comes back as **Insufficient Evidence**. Resolução CONSU 213/2021 is cited only on a historical question.
 
@@ -94,9 +100,11 @@ A Unifesp servidor asking about telework needs the rule that is actually in forc
 
 ### [LLM-Eval-Suite](projects/llm-eval-suite.md) 🧪
 
-<a href="projects/llm-eval-suite.md">
-  <img src="images/llm-eval/project_cover.png" alt="LLM Eval Suite" width="900">
-</a>
+<p align="center">
+  <a href="projects/llm-eval-suite.md">
+    <img src="images/llm-eval/project_cover.png" alt="LLM Eval Suite" width="450">
+  </a>
+</p>
 
 Picking a model and a retrieval strategy by intuition does not survive review. This benchmark compares prompting strategies (Zero-Shot, Few-Shot, CoT) and RAG strategies (Naive, HyDE, Reranking) across models using BLEU, ROUGE, LLM-as-Judge, and RAGAS, traced end to end in LangSmith.
 
@@ -110,9 +118,11 @@ Best composite RAGAS score: **0.988** with HyDE on Gemma3 27B. Best prompting ac
 
 ### [Credit Card Churn Prediction](projects/churn-prediction-credit-card.md) 💳
 
-<a href="projects/churn-prediction-credit-card.md">
-  <img src="images/churn-predction/project_cover.png" alt="Credit Card Churn Prediction" width="900">
-</a>
+<p align="center">
+  <a href="projects/churn-prediction-credit-card.md">
+    <img src="images/churn-predction/project_cover.png" alt="Credit Card Churn Prediction" width="450">
+  </a>
+</p>
 
 A bank loses revenue when card holders leave without warning. Full **CRISP-DM** pipeline — EDA, feature engineering, and a comparison across Logistic Regression, SVM, KNN, Random Forest, XGBoost, and LightGBM with stratified splits and calibration analysis. Ships a serialized model and a high-risk customer list for retention campaigns, with SHAP explaining each prediction.
 
@@ -122,9 +132,11 @@ A bank loses revenue when card holders leave without warning. Full **CRISP-DM** 
 
 ### [Credit Risk Classification](projects/credit-risk-classification.md) 💸
 
-<a href="projects/credit-risk-classification.md">
-  <img src="images/credit-risk/logoLC.jpeg" alt="Credit Risk Classification" width="900">
-</a>
+<p align="center">
+  <a href="projects/credit-risk-classification.md">
+    <img src="images/credit-risk/logoLC.jpeg" alt="Credit Risk Classification" width="450">
+  </a>
+</p>
 
 Default risk has to be assessed using only what is known before approval. A **PyTorch** network trained on LendingClub data in **Azure Databricks**, paired with a four-level risk classifier that routes each application to approval, denial, or reassessment. **71.08% AUC-ROC**, 66.42% accuracy, and 63.87% recall on test data.
 

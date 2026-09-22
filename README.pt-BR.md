@@ -55,9 +55,11 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 
 ### [AI Customer Support Platform](projects/ai-customer-support-platform.md) 🎧
 
-<a href="projects/ai-customer-support-platform.md">
-  <img src="images/ai-customer-support-platform-with-langgraph/project_cover.png" alt="AI Customer Support Platform" width="900">
-</a>
+<p align="center">
+  <a href="projects/ai-customer-support-platform.md">
+    <img src="images/ai-customer-support-platform-with-langgraph/project_cover.png" alt="AI Customer Support Platform" width="450">
+  </a>
+</p>
 
 Um **supervisor LangGraph** identifica a intenção de cada ticket e delega para agentes de cobrança, logística ou conta. Esses agentes leem os fatos do pedido no **PostgreSQL**, recuperam procedimentos por **RAG com pgvector** e executam um **motor de políticas determinístico** antes de qualquer reembolso ou cancelamento — de modo que o assistente nunca inventa o estado do pedido nem aprova o que a política proíbe.
 
@@ -71,9 +73,11 @@ São duas interfaces: um Portal do Cliente para o consumidor e um Console de Sup
 
 ### [AI Agent com Docker Containers e Python](projects/ai-agent-email-docker.md) 🤖
 
-<a href="projects/ai-agent-email-docker.md">
-  <img src="images/ai-agent-email/project_cover.png" alt="AI Agent com Docker" width="900">
-</a>
+<p align="center">
+  <a href="projects/ai-agent-email-docker.md">
+    <img src="images/ai-agent-email/project_cover.png" alt="AI Agent com Docker" width="450">
+  </a>
+</p>
 
 Rotinas manuais de e-mail — pesquisar um assunto, ler a caixa de entrada, redigir uma resposta — são lentas e repetitivas. Um **supervisor LangGraph** distribui o trabalho entre agentes de pesquisa e de e-mail, com FastAPI servindo a API, PostgreSQL guardando o histórico de conversas e Streamlit na interface. Empacotado com Docker Compose e publicado na DigitalOcean App Platform.
 
@@ -83,9 +87,11 @@ Rotinas manuais de e-mail — pesquisar um assunto, ler a caixa de entrada, redi
 
 ### [PGD Teletrabalho](projects/pgd-teletrabalho.md) 📜
 
-<a href="projects/pgd-teletrabalho.md">
-  <img src="images/pgd-teletrabalho/project_cover.png" alt="PGD Teletrabalho" width="900">
-</a>
+<p align="center">
+  <a href="projects/pgd-teletrabalho.md">
+    <img src="images/pgd-teletrabalho/project_cover.png" alt="PGD Teletrabalho" width="450">
+  </a>
+</p>
 
 Um servidor da Unifesp que pergunta sobre teletrabalho precisa da regra que está em vigor, com um artigo que dá para abrir. O **Ask** recupera de um recorte datado de cinco atos normativos, redige a resposta e um **portão de citação determinístico** só deixa passar citação cujo artigo foi recuperado. O que o recorte não sustenta volta como **Evidência Insuficiente**. A Resolução CONSU 213/2021 só entra em pergunta histórica.
 
@@ -97,9 +103,11 @@ Um servidor da Unifesp que pergunta sobre teletrabalho precisa da regra que est�
 
 ### [LLM-Eval-Suite](projects/llm-eval-suite.md) 🧪
 
-<a href="projects/llm-eval-suite.md">
-  <img src="images/llm-eval/project_cover.png" alt="LLM Eval Suite" width="900">
-</a>
+<p align="center">
+  <a href="projects/llm-eval-suite.md">
+    <img src="images/llm-eval/project_cover.png" alt="LLM Eval Suite" width="450">
+  </a>
+</p>
 
 Escolher modelo e estratégia de recuperação por intuição não sobrevive a uma revisão. Este benchmark compara estratégias de prompting (Zero-Shot, Few-Shot, CoT) e de RAG (Naive, HyDE, Reranking) entre modelos usando BLEU, ROUGE, LLM-as-Judge e RAGAS, com tracing de ponta a ponta no LangSmith.
 
@@ -113,9 +121,11 @@ Melhor RAGAS composto: **0,988** com HyDE no Gemma3 27B. Melhor acurácia de pro
 
 ### [Previsão de Churn de Cartão de Crédito](projects/churn-prediction-credit-card.md) 💳
 
-<a href="projects/churn-prediction-credit-card.md">
-  <img src="images/churn-predction/project_cover.png" alt="Previsão de Churn de Cartão de Crédito" width="900">
-</a>
+<p align="center">
+  <a href="projects/churn-prediction-credit-card.md">
+    <img src="images/churn-predction/project_cover.png" alt="Previsão de Churn de Cartão de Crédito" width="450">
+  </a>
+</p>
 
 Um banco perde receita quando o cliente de cartão sai sem aviso. Pipeline **CRISP-DM** completo — EDA, engenharia de atributos e comparação entre Regressão Logística, SVM, KNN, Random Forest, XGBoost e LightGBM, com divisão estratificada e análise de calibração. Entrega um modelo serializado e uma lista de clientes de alto risco para campanhas de retenção, com SHAP explicando cada previsão.
 
@@ -125,9 +135,11 @@ Um banco perde receita quando o cliente de cartão sai sem aviso. Pipeline **CRI
 
 ### [Classificação de Risco de Crédito](projects/credit-risk-classification.md) 💸
 
-<a href="projects/credit-risk-classification.md">
-  <img src="images/credit-risk/logoLC.jpeg" alt="Classificação de Risco de Crédito" width="900">
-</a>
+<p align="center">
+  <a href="projects/credit-risk-classification.md">
+    <img src="images/credit-risk/logoLC.jpeg" alt="Classificação de Risco de Crédito" width="450">
+  </a>
+</p>
 
 O risco de inadimplência precisa ser avaliado apenas com o que se sabe antes da aprovação. Uma rede neural em **PyTorch** treinada com dados da LendingClub no **Azure Databricks**, combinada a um classificador de risco em quatro níveis que direciona cada solicitação para aprovação, negação ou reavaliação. **71,08% de AUC-ROC**, 66,42% de acurácia e 63,87% de recall no teste.
 
