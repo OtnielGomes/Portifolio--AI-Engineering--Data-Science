@@ -27,7 +27,7 @@ Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and col
 
 | Focus area | Skills |
 |---|---|
-| **AI Engineering** | LangGraph multi-agent systems, RAG (Naive, HyDE, Reranking), FastAPI, Next.js, Streamlit, Docker |
+| **AI Engineering** | LangGraph multi-agent systems, RAG (Naive, HyDE, Reranking), FastAPI, Next.js, Docker |
 | **Evaluation & Observability** | RAGAS, BLEU, ROUGE, LLM-as-Judge, LangSmith, Langfuse, OpenTelemetry |
 | **Data & Modeling** | CRISP-DM, scikit-learn, XGBoost, LightGBM, PyTorch, Azure Databricks |
 | **Data & Infrastructure** | PostgreSQL, pgvector, Redis, ChromaDB, Docker Compose, GitHub Actions |
@@ -39,7 +39,7 @@ Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and col
 | Project | Problem | Stack | Highlight |
 |---|---|---|---|
 | [AI Customer Support Platform](projects/ai-customer-support-platform.md) | Answer about real orders without hallucinating, and escalate when policy forbids acting | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Multi-agent supervisor with deterministic policy engine and human-in-the-loop |
-| [AI Agent with Docker](projects/ai-agent-email-docker.md) | Automate email research, inbox reading, and sending | LangGraph, FastAPI, PostgreSQL, Streamlit, Docker | Deployed on DigitalOcean App Platform |
+| [AI Agent with Docker](projects/ai-agent-email-docker.md) | Read the inbox and draft mail without sending until a person confirms | LangGraph, FastAPI, Next.js, PostgreSQL, Docker | SMTP runs only after the draft is confirmed |
 | [PGD Teletrabalho](projects/pgd-teletrabalho.md) | Answer current telework rules from the act in force, or refuse | FastAPI, Next.js, PostgreSQL, Docker | Citation gate; **89** pytest passed |
 | [LLM-Eval-Suite](projects/llm-eval-suite.md) | Compare LLMs and RAG strategies objectively | Ollama, ChromaDB, RAGAS, LangSmith | **0.988** composite RAGAS (HyDE, Gemma3 27B) |
 | [Credit Card Churn Prediction](projects/churn-prediction-credit-card.md) | Identify credit-card customers at risk of leaving | XGBoost, LightGBM, scikit-learn, SHAP | End-to-end CRISP-DM pipeline with explainability |
@@ -76,7 +76,7 @@ Two surfaces: a Customer Portal for shoppers and a Support Console where a human
   </a>
 </p>
 
-Manual email workflows — researching a topic, reading the inbox, drafting a reply — are slow and repetitive. A **LangGraph supervisor** routes work to research and email agents, with FastAPI serving the API, PostgreSQL keeping chat history, and Streamlit for the UI. Packaged with Docker Compose and deployed on DigitalOcean App Platform.
+The assistant reads the inbox and prepares a draft, and Gmail SMTP runs only after that card is confirmed. A **LangGraph supervisor** routes research and email work. Next.js shows the inbox, the chat, and the review card; FastAPI and PostgreSQL store messages and drafts. Docker Compose locally; DigitalOcean App Platform in production.
 
 **[Read more →](projects/ai-agent-email-docker.md)** · [Source repository](https://github.com/OtnielGomes/AI-Agent-with-Docker-Containers-and-Python)
 

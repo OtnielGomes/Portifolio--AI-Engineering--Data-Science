@@ -27,7 +27,7 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 
 | Área de foco | Competências |
 |---|---|
-| **AI Engineering** | Sistemas multi-agente com LangGraph, RAG (Naive, HyDE, Reranking), FastAPI, Next.js, Streamlit, Docker |
+| **AI Engineering** | Sistemas multi-agente com LangGraph, RAG (Naive, HyDE, Reranking), FastAPI, Next.js, Docker |
 | **Avaliação e observabilidade** | RAGAS, BLEU, ROUGE, LLM-as-Judge, LangSmith, Langfuse, OpenTelemetry |
 | **Dados e modelagem** | CRISP-DM, scikit-learn, XGBoost, LightGBM, PyTorch, Azure Databricks |
 | **Dados e infraestrutura** | PostgreSQL, pgvector, Redis, ChromaDB, Docker Compose, GitHub Actions |
@@ -42,7 +42,7 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 | Projeto | Problema | Stack | Destaque |
 |---|---|---|---|
 | [AI Customer Support Platform](projects/ai-customer-support-platform.md) | Responder sobre pedidos reais sem alucinar e escalar quando a política impede agir | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Supervisor multi-agente com políticas determinísticas e human-in-the-loop |
-| [AI Agent com Docker](projects/ai-agent-email-docker.md) | Automatizar pesquisa, leitura e envio de e-mails | LangGraph, FastAPI, PostgreSQL, Streamlit, Docker | Publicado na DigitalOcean App Platform |
+| [AI Agent com Docker](projects/ai-agent-email-docker.md) | Ler a caixa de entrada e redigir e-mails, enviando só depois da confirmação | LangGraph, FastAPI, Next.js, PostgreSQL, Docker | O SMTP só dispara depois que o rascunho é confirmado |
 | [PGD Teletrabalho](projects/pgd-teletrabalho.md) | Responder regras vigentes de teletrabalho a partir do ato em vigor, ou recusar | FastAPI, Next.js, PostgreSQL, Docker | Portão de citação; **89** testes pytest |
 | [LLM-Eval-Suite](projects/llm-eval-suite.md) | Comparar LLMs e estratégias de RAG de forma objetiva | Ollama, ChromaDB, RAGAS, LangSmith | RAGAS composto de **0,988** (HyDE, Gemma3 27B) |
 | [Previsão de Churn de Cartão](projects/churn-prediction-credit-card.md) | Identificar clientes de cartão com risco de sair | XGBoost, LightGBM, scikit-learn, SHAP | Pipeline CRISP-DM completo com explicabilidade |
@@ -79,7 +79,7 @@ São duas interfaces: um Portal do Cliente para o consumidor e um Console de Sup
   </a>
 </p>
 
-Rotinas manuais de e-mail — pesquisar um assunto, ler a caixa de entrada, redigir uma resposta — são lentas e repetitivas. Um **supervisor LangGraph** distribui o trabalho entre agentes de pesquisa e de e-mail, com FastAPI servindo a API, PostgreSQL guardando o histórico de conversas e Streamlit na interface. Empacotado com Docker Compose e publicado na DigitalOcean App Platform.
+O assistente lê a caixa de entrada e prepara um rascunho; o SMTP do Gmail só dispara depois que esse cartão é confirmado. Um **supervisor LangGraph** encaminha pesquisa e e-mail. O Next.js mostra a caixa, o chat e o cartão de revisão; FastAPI e PostgreSQL guardam mensagens e rascunhos. Docker Compose no local; DigitalOcean App Platform em produção.
 
 **[Ver detalhes →](projects/ai-agent-email-docker.md)** · [Repositório](https://github.com/OtnielGomes/AI-Agent-with-Docker-Containers-and-Python)
 
