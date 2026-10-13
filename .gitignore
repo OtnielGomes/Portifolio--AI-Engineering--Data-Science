@@ -1,6 +1,7 @@
 # Agent skills & Cursor agent config (local only)
 .agents/
 skills-lock.json
+plans/
 
 # Cursor IDE — keep project rules, ignore everything else
 .cursor

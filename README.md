@@ -9,7 +9,7 @@
     <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
     <a href="https://www.langchain.com/langgraph"><img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangGraph"></a>
     <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"></a>
-    <a href="https://docs.ragas.io/"><img src="https://img.shields.io/badge/RAGAS-6366F1?style=for-the-badge" alt="RAGAS"></a>
+    <a href="https://smith.langchain.com/"><img src="https://img.shields.io/badge/LangSmith-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangSmith"></a>
     <a href="https://pytorch.org"><img src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch"></a>
     <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a>
     <a href="https://linkedin.com/in/otnielgomes"><img src="https://img.shields.io/badge/-LinkedIn-0077B5.svg?style=for-the-badge&logo=linkedin&colorB=0077B5" alt="LinkedIn"></a>
@@ -21,7 +21,7 @@
 
 ---
 
-RAG pipelines, multi-agent assistants, and benchmark frameworks — built so the interesting claims can be checked. Business rules live in code rather than in prompts, retrieval quality gets measured instead of assumed, and every project here links to the repository that produced it.
+Document extraction with a deterministic check, RAG pipelines, and multi-agent assistants — built so the interesting claims can be checked. Business rules live in code rather than in prompts, retrieval quality gets measured instead of assumed, and every project here links to the repository that produced it.
 
 Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and collaborations.
 
@@ -38,17 +38,36 @@ Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and col
 
 | Project | Problem | Stack | Highlight |
 |---|---|---|---|
+| [NFe Document Extraction](projects/nfe-document-extraction.md) | Turn a DANFE PDF or photo into validated JSON and name the fields a person must review | LangGraph, OpenAI, LangSmith, Docker | Cheap vision, `gpt-6-luna`: **0.9870** field accuracy on digital PDFs |
 | [AI Customer Support Platform](projects/ai-customer-support-platform.md) | Answer about real orders without hallucinating, and escalate when policy forbids acting | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Multi-agent supervisor with deterministic policy engine and human-in-the-loop |
 | [AI Agent with Docker](projects/ai-agent-email-docker.md) | Read the inbox and draft mail without sending until a person confirms | LangGraph, FastAPI, Next.js, PostgreSQL, Docker | SMTP runs only after the draft is confirmed |
 | [PGD Teletrabalho](projects/pgd-teletrabalho.md) | Answer current telework rules from the act in force, or refuse | FastAPI, Next.js, PostgreSQL, Docker | Citation gate; **89** pytest passed |
-| [LLM-Eval-Suite](projects/llm-eval-suite.md) | Compare LLMs and RAG strategies objectively | Ollama, ChromaDB, RAGAS, LangSmith | **0.988** composite RAGAS (HyDE, Gemma3 27B) |
 | [Credit Card Churn Prediction](projects/churn-prediction-credit-card.md) | Identify credit-card customers at risk of leaving | XGBoost, LightGBM, scikit-learn, SHAP | End-to-end CRISP-DM pipeline with explainability |
 | [Credit Risk Classification](projects/credit-risk-classification.md) | Classify loan default risk at application time | PyTorch, Azure Databricks | **71.08%** AUC-ROC on test data |
-| [Customer Segmentation](projects/clustering-segmentation.md) | Discover natural groupings in customer data | scikit-learn, CRISP-DM | In progress |
 
 ---
 
 ## Featured project
+
+### [NFe Document Extraction](projects/nfe-document-extraction.md) 📄
+
+<p align="center">
+  <a href="projects/nfe-document-extraction.md">
+    <img src="images/nfe-document-extraction/project_cover.png" alt="NFe Document Extraction" width="450">
+  </a>
+</p>
+
+**Problem:** A DANFE arrives as a PDF or a phone photo, and accounting still types the fields in by hand.
+
+**Solution:** Header and line-item agents extract the invoice; a deterministic validator, one repair attempt, and human review accept or hold each field.
+
+**Result:** Adopted cheap vision with `gpt-6-luna` scores **0.9870** field accuracy on digital PDFs at **US$ 0.002035** per invoice, and **0.6420** on simulated photos; planted-error detection is **1.0000** on both.
+
+**[Read the full case study →](projects/nfe-document-extraction.md)** · [Source repository](https://github.com/OtnielGomes/NFe-Document-Extraction)
+
+---
+
+## AI Engineering
 
 ### [AI Customer Support Platform](projects/ai-customer-support-platform.md) 🎧
 
@@ -62,11 +81,9 @@ A LangGraph **supervisor** routes each support ticket to billing, logistics, or 
 
 Two surfaces: a Customer Portal for shoppers and a Support Console where a human takes over an escalated ticket in the same thread, with the assistant's tool trail visible. Deployed on DigitalOcean App Platform with OpenTelemetry and Langfuse tracing.
 
-**[Read the full case study →](projects/ai-customer-support-platform.md)** · [Source repository](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph)
+**[Read more →](projects/ai-customer-support-platform.md)** · [Source repository](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph)
 
 ---
-
-## AI Engineering
 
 ### [AI Agent with Docker Containers and Python](projects/ai-agent-email-docker.md) 🤖
 
@@ -98,22 +115,6 @@ A Unifesp servidor asking about telework needs the rule that is actually in forc
 
 ---
 
-### [LLM-Eval-Suite](projects/llm-eval-suite.md) 🧪
-
-<p align="center">
-  <a href="projects/llm-eval-suite.md">
-    <img src="images/llm-eval/project_cover.png" alt="LLM Eval Suite" width="450">
-  </a>
-</p>
-
-Picking a model and a retrieval strategy by intuition does not survive review. This benchmark compares prompting strategies (Zero-Shot, Few-Shot, CoT) and RAG strategies (Naive, HyDE, Reranking) across models using BLEU, ROUGE, LLM-as-Judge, and RAGAS, traced end to end in LangSmith.
-
-Best composite RAGAS score: **0.988** with HyDE on Gemma3 27B. Best prompting accuracy: **89.3%** mean with Qwen3-Coder 480B.
-
-**[Read more →](projects/llm-eval-suite.md)** · [Source repository](https://github.com/OtnielGomes/LLM-Eval-Suite)
-
----
-
 ## Data Science
 
 ### [Credit Card Churn Prediction](projects/churn-prediction-credit-card.md) 💳
@@ -141,17 +142,6 @@ A bank loses revenue when card holders leave without warning. Full **CRISP-DM** 
 Default risk has to be assessed using only what is known before approval. A **PyTorch** network trained on LendingClub data in **Azure Databricks**, paired with a four-level risk classifier that routes each application to approval, denial, or reassessment. **71.08% AUC-ROC**, 66.42% accuracy, and 63.87% recall on test data.
 
 **[Read more →](projects/credit-risk-classification.md)** · [Source repository](https://github.com/OtnielGomes/0_Portfolio-Credit_Risk_Analysis_with_Pytorch)
-
----
-
-### [Customer Segmentation with Clustering](projects/clustering-segmentation.md) 📊
-
-Unsupervised segmentation to find natural customer groupings — CRISP-DM workflow with K-Means and hierarchical clustering, evaluated by silhouette score.
-
-> [!NOTE]
-> In progress — repository and full analysis coming soon.
-
-**[Read more →](projects/clustering-segmentation.md)**
 
 ---
 
