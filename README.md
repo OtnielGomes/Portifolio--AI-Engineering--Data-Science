@@ -15,7 +15,7 @@
     <a href="https://linkedin.com/in/otnielgomes"><img src="https://img.shields.io/badge/-LinkedIn-0077B5.svg?style=for-the-badge&logo=linkedin&colorB=0077B5" alt="LinkedIn"></a>
   </p>
   <a href="https://github.com/OtnielGomes/Portifolio--AI-Engineering--Data-Science">
-    <img src="images/ia_engineer.png" alt="AI Engineer Portfolio" width="900">
+    <img src="projects/covers/portfolio-hero/cover.en.png" alt="AI Engineer Portfolio" width="900">
   </a>
 </div>
 
