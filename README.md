@@ -53,7 +53,7 @@ Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and col
 
 <p align="center">
   <a href="projects/nfe-document-extraction.md">
-    <img src="projects/covers/nfe-document-extraction/cover.en.png" alt="NFe Document Extraction" width="450">
+    <img src="projects/covers/nfe-document-extraction/cover.en.png" alt="NFe Document Extraction" width="600">
   </a>
 </p>
 
@@ -73,7 +73,7 @@ Open to **AI Engineering, LLM Systems, and applied Generative AI** roles and col
 
 <p align="center">
   <a href="projects/ai-customer-support-platform.md">
-    <img src="projects/covers/ai-customer-support-platform/cover.en.png" alt="AI Customer Support Platform" width="450">
+    <img src="projects/covers/ai-customer-support-platform/cover.en.png" alt="AI Customer Support Platform" width="600">
   </a>
 </p>
 
@@ -89,7 +89,7 @@ Two surfaces: a Customer Portal for shoppers and a Support Console where a human
 
 <p align="center">
   <a href="projects/ai-agent-email-docker.md">
-    <img src="projects/covers/ai-agent-email-docker/cover.en.png" alt="AI Agent with Docker" width="450">
+    <img src="projects/covers/ai-agent-email-docker/cover.en.png" alt="AI Agent with Docker" width="600">
   </a>
 </p>
 
@@ -103,7 +103,7 @@ The assistant reads the inbox and prepares a draft, and Gmail SMTP runs only aft
 
 <p align="center">
   <a href="projects/pgd-teletrabalho.md">
-    <img src="projects/covers/pgd-teletrabalho/cover.en.png" alt="PGD Teletrabalho" width="450">
+    <img src="projects/covers/pgd-teletrabalho/cover.en.png" alt="PGD Teletrabalho" width="600">
   </a>
 </p>
 
@@ -121,7 +121,7 @@ A Unifesp servidor asking about telework needs the rule that is actually in forc
 
 <p align="center">
   <a href="projects/churn-prediction-credit-card.md">
-    <img src="projects/covers/churn-prediction-credit-card/cover.en.png" alt="Credit Card Churn Prediction" width="450">
+    <img src="projects/covers/churn-prediction-credit-card/cover.en.png" alt="Credit Card Churn Prediction" width="600">
   </a>
 </p>
 
@@ -135,7 +135,7 @@ A bank loses revenue when card holders leave without warning. Full **CRISP-DM** 
 
 <p align="center">
   <a href="projects/credit-risk-classification.md">
-    <img src="projects/covers/credit-risk-classification/cover.en.png" alt="Credit Risk Classification" width="450">
+    <img src="projects/covers/credit-risk-classification/cover.en.png" alt="Credit Risk Classification" width="600">
   </a>
 </p>
 

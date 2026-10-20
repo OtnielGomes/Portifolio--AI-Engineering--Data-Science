@@ -56,7 +56,7 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 
 <p align="center">
   <a href="projects/nfe-document-extraction.pt-BR.md">
-    <img src="projects/covers/nfe-document-extraction/cover.pt.png" alt="Extração de Documentos NF-e" width="450">
+    <img src="projects/covers/nfe-document-extraction/cover.pt.png" alt="Extração de Documentos NF-e" width="600">
   </a>
 </p>
 
@@ -76,7 +76,7 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 
 <p align="center">
   <a href="projects/ai-customer-support-platform.pt-BR.md">
-    <img src="projects/covers/ai-customer-support-platform/cover.pt.png" alt="AI Customer Support Platform" width="450">
+    <img src="projects/covers/ai-customer-support-platform/cover.pt.png" alt="AI Customer Support Platform" width="600">
   </a>
 </p>
 
@@ -92,7 +92,7 @@ São duas interfaces: um Portal do Cliente para o consumidor e um Console de Sup
 
 <p align="center">
   <a href="projects/ai-agent-email-docker.pt-BR.md">
-    <img src="projects/covers/ai-agent-email-docker/cover.pt.png" alt="AI Agent com Docker" width="450">
+    <img src="projects/covers/ai-agent-email-docker/cover.pt.png" alt="AI Agent com Docker" width="600">
   </a>
 </p>
 
@@ -106,7 +106,7 @@ O assistente lê a caixa de entrada e prepara um rascunho; o SMTP do Gmail só d
 
 <p align="center">
   <a href="projects/pgd-teletrabalho.pt-BR.md">
-    <img src="projects/covers/pgd-teletrabalho/cover.pt.png" alt="PGD Teletrabalho" width="450">
+    <img src="projects/covers/pgd-teletrabalho/cover.pt.png" alt="PGD Teletrabalho" width="600">
   </a>
 </p>
 
@@ -124,7 +124,7 @@ Um servidor da Unifesp que pergunta sobre teletrabalho precisa da regra que est�
 
 <p align="center">
   <a href="projects/churn-prediction-credit-card.pt-BR.md">
-    <img src="projects/covers/churn-prediction-credit-card/cover.pt.png" alt="Previsão de Churn de Cartão de Crédito" width="450">
+    <img src="projects/covers/churn-prediction-credit-card/cover.pt.png" alt="Previsão de Churn de Cartão de Crédito" width="600">
   </a>
 </p>
 
@@ -138,7 +138,7 @@ Um banco perde receita quando o cliente de cartão sai sem aviso. Pipeline **CRI
 
 <p align="center">
   <a href="projects/credit-risk-classification.pt-BR.md">
-    <img src="projects/covers/credit-risk-classification/cover.pt.png" alt="Classificação de Risco de Crédito" width="450">
+    <img src="projects/covers/credit-risk-classification/cover.pt.png" alt="Classificação de Risco de Crédito" width="600">
   </a>
 </p>
 
