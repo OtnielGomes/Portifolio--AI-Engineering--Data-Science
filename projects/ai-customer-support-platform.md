@@ -2,6 +2,8 @@
 
 [← Back to portfolio](../README.md)
 
+**Language:** English | [Português](ai-customer-support-platform.pt-BR.md)
+
 # AI Customer Support Platform 🎧
 
 [![LangGraph](https://img.shields.io/badge/LangGraph-supervisor-1C3C3C?style=flat-square)](https://www.langchain.com/langgraph)
@@ -16,71 +18,80 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph">
-    <img src="../images/ai-customer-support-platform-with-langgraph/project_cover.png" alt="AI Customer Support Platform project cover" width="900">
+    <img src="covers/ai-customer-support-platform/cover.en.png" alt="ai-customer-support-platform cover" width="900">
   </a>
 </div>
 
-**Problem:** A support assistant that talks about orders has to be right about them. It needs to answer *when will my package arrive* from the actual shipment row, refuse a refund the policy does not allow, and hand the conversation to a human when the case exceeds what automation is authorized to do. An LLM asked to do this from context alone will confidently invent order states and approve refunds it should not.
+| | |
+|---|---|
+| **Context** | Independent portfolio |
+| **Timeline** | 2025 — 2026 |
+| **Focus area** | Multi-agent support, policy engine & RAG |
 
-**Solution:** A **LangGraph supervisor** classifies each ticket's intent and delegates to billing, logistics, or account workers. Those workers read from three separate sources of truth: **PostgreSQL** for operational facts, a **deterministic policy engine** for anything with money or deadlines attached, and **RAG over pgvector** for the procedures and FAQs that explain policy. Tools are scoped to the authenticated customer, and the **Next.js** front end reaches the API through a BFF so keys never touch the browser.
+LangGraph · FastAPI · Next.js · PostgreSQL/pgvector · Redis · Langfuse · Docker
 
-**Result:** A two-surface product — Customer Portal and Support Console — where business rules live in code rather than in prompts, escalation pauses automation for a human takeover in the same thread, and jailbreak and prompt-injection attempts are refused instead of executed. Deployed on **DigitalOcean App Platform** as separate API, web, PostgreSQL/pgvector, and Valkey services, with OpenTelemetry and Langfuse tracing behind an analytics console.
+## Overview
 
-## The three sources of truth
+A support assistant that talks about orders has to be right about them. It must answer *when will my package arrive* from the actual shipment row, refuse a refund the policy does not allow, and hand the conversation to a human when automation is not authorized. An LLM asked to do this from context alone will invent order states and approve refunds it should not.
 
-This separation is the core design decision of the project, and the reason the assistant does not hallucinate order state.
+A **LangGraph supervisor** classifies intent and delegates to billing, logistics, or account workers. Three sources of truth stay separate: **PostgreSQL** for operational facts, a **deterministic policy engine** (`company.yaml`) for money and deadlines, and **RAG over pgvector** for procedures and FAQs—operational rows are deliberately excluded from the index. Tools are scoped to the authenticated customer; the **Next.js** BFF keeps API keys off the browser.
 
-| Source | Holds | Why it is separate |
-|---|---|---|
-| **PostgreSQL** | Customers, orders, payments, shipments, tickets | Facts are read, never generated. The model asks a tool; it does not recall. |
-| **Policy engine** (`app/policies/`, `data/company/company.yaml`) | Refund windows, BRL approval thresholds, shipping rules | Numbers that cost money when wrong belong in Python, evaluated before the model acts — not in a prompt the model can be talked out of. |
-| **RAG over pgvector** (`data/knowledge_base/`) | Procedures, FAQs, policy explanations | Documents explain *why* a rule exists. Operational rows are deliberately kept out of the index. |
+The product ships as **Customer Portal** and **Support Console** with SSE live chat, human takeover on the same thread, guardrails for jailbreak and prompt injection, and an analytics console fed by OpenTelemetry and Langfuse. Deployed on **DigitalOcean App Platform** (API, web, Postgres/pgvector, Valkey).
+
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    Browser[Next.js UI + BFF] --> API[FastAPI routes]
-    API --> Guard[Guardrails]
-    Guard --> Graph[LangGraph workflow]
-    Graph --> Supervisor[Supervisor]
-    Supervisor --> Billing[Billing agent]
-    Supervisor --> Logistics[Logistics agent]
-    Supervisor --> Account[Account agent]
-    Supervisor --> Escalation[Escalation agent]
-    Billing --> Tools[Scoped tools]
-    Logistics --> Tools
-    Account --> Tools
-    Billing --> RAG[pgvector RAG]
-    Billing --> Policy[Policy engine]
-    Tools --> DB[(PostgreSQL facts)]
-    RAG --> KB[Policy documents]
-    Policy --> YAML[company.yaml]
-    Escalation --> Human[Support console takeover]
-    API --> Redis[(Redis cache + pub/sub)]
-```
+Supervisor, domain agents, facts, policy, and knowledge—without collapsing them into the prompt.
 
-| Layer | Technology |
-|---|---|
-| API | FastAPI, Pydantic, Uvicorn |
-| Agents | LangGraph — supervisor plus domain workers |
-| LLM | OpenAI-compatible, configured via environment |
-| RAG | PostgreSQL + pgvector |
-| Cache / live events | Redis, Valkey in the cloud |
-| Observability | OpenTelemetry, Langfuse |
-| Frontend | Next.js 16 — Customer Portal and Support Console |
-| Infrastructure | Docker, Docker Compose, GitHub Actions |
+![Architecture diagram](architecture-cases/ai-customer-support-platform-en.png)
 
-### Scoped tools
+## Implementation walkthrough
 
-Every tool is bound to the ticket's customer, so a worker cannot read another customer's data even if the conversation tries to steer it there.
+### PHASE 01 — Authentication and BFF
 
-| Tool | Returns |
-|---|---|
-| `get_order` | Order header, items, and current state |
-| `get_payments` | Payment attempts, including duplicate charges |
-| `get_shipment` | Carrier, tracking, and estimated delivery |
-| `check_refund_eligibility` | Policy verdict with the rule that produced it |
+Email-only portal login rejects unknown customers. Next.js routes chat and ticket APIs through a backend-for-frontend so secrets never reach the client.
+
+### PHASE 02 — Guardrails and graph entry
+
+Incoming messages pass safety checks before the LangGraph workflow runs. Failed guardrails short-circuit to refusal or escalation paths.
+
+### PHASE 03 — Supervisor and scoped tools
+
+The supervisor picks billing, logistics, account, or escalation workers. Tools (`get_order`, `get_payments`, `get_shipment`, `check_refund_eligibility`) are bound to the ticket’s customer ID.
+
+### PHASE 04 — Policy vs RAG vs database
+
+Facts come from SQL queries. Refund and threshold rules are evaluated in Python before any destructive action. RAG retrieves policy *explanations* from `data/knowledge_base/`, not live order rows.
+
+### PHASE 05 — Live chat, takeover, and observability
+
+Redis pub/sub fans out SSE token streams; messages persist for human pickup mid-thread. Escalation pauses automation while agents use the Support Console with tool traces. Langfuse and OpenTelemetry back intent mix, latency, and tool error dashboards.
+
+## Tech stack deep-dive
+
+### LangGraph
+
+Explicit supervisor/worker graph matches how support teams think about intents and handoffs.
+
+### Policy engine (YAML + Python)
+
+Numbers that cost money when wrong are not negotiable in a system prompt.
+
+### pgvector RAG
+
+Grounds procedural answers while keeping transactional data in SQL where it belongs.
+
+### Redis / Valkey
+
+Cache and pub/sub for responsive chat and multi-tab console updates.
+
+### Langfuse + OpenTelemetry
+
+Production-grade tracing for eval harnesses (intent, tool correctness, policy compliance).
+
+### Docker & GitHub Actions
+
+Reproducible synthetic world (`SCN-*` anomalies) for demos and regression evals.
 
 ## Screenshots
 
@@ -162,13 +173,7 @@ The same stack split into separate services: FastAPI + LangGraph API, Next.js we
 
 </details>
 
-## Engineering notes
-
-- **Synthetic world, reproducible demos.** Customers, orders, and payments are generated from a seeded profile with labeled anomalies (`SCN-*`) — double charges, delayed shipments, refunds outside the window — so a scenario can be replayed exactly for evaluation.
-- **Live chat over SSE.** Token streaming with Redis pub/sub fan-out and persisted `ticket_messages`, which is what lets a human pick up a conversation mid-thread.
-- **Evaluation harness.** `app/evaluation/` defines datasets and evaluators for intent accuracy, tool-call correctness, policy compliance, and unauthorized-action rate.
-
 > [!NOTE]
-> Setup instructions, environment variables, and demo logins live in the [project repository](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph), which also has a [Portuguese README](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph/blob/main/README.pt-BR.md).
+> Setup instructions and environment variables live in the [project repository](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph).
 
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -2,6 +2,8 @@
 
 [← Back to portfolio](../README.md)
 
+**Language:** English | [Português](churn-prediction-credit-card.pt-BR.md)
+
 # Credit Card Churn Prediction 💳
 
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
@@ -12,15 +14,76 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/Churn-Prediction-Credit-Card">
-    <img src="../images/churn-predction/project_cover.png" alt="Churn Prediction project cover" width="900">
+    <img src="covers/churn-prediction-credit-card/cover.en.png" alt="churn-prediction-credit-card cover" width="900">
   </a>
 </div>
 
-**Problem:** A banking institution loses revenue when credit-card customers churn without early warning.
+| | |
+|---|---|
+| **Context** | Independent portfolio |
+| **Timeline** | 2024 — 2025 |
+| **Focus area** | CRISP-DM & explainable tabular ML |
 
-**Solution:** End-to-end **CRISP-DM** pipeline — EDA, feature engineering, and comparison of Logistic Regression, SVM, KNN, Random Forest, XGBoost, and LightGBM with stratified splits and calibration analysis.
+scikit-learn · XGBoost · LightGBM · SHAP
 
-**Result:** Production-ready artifact (`joblib`) delivering a high-risk customer list for targeted retention campaigns, with SHAP-based explainability.
+## Overview
+
+A bank loses revenue when credit-card customers churn without early warning. Marketing needs a ranked list of at-risk cardholders—not a black box that cannot be defended to compliance or the business.
+
+An end-to-end **CRISP-DM** pipeline covers business framing, EDA, feature engineering, and comparison of Logistic Regression, SVM, KNN, Random Forest, **XGBoost**, and **LightGBM** with stratified splits and calibration analysis. The final artifact is a serialized model (`joblib`) plus SHAP explanations for why a customer scored high risk.
+
+Deliverable: a **high-risk customer list** for targeted retention campaigns, with methodology and plots documented in the repository.
+
+
+## Architecture
+
+From business KPIs through modeling to batch scoring for CRM-style use.
+
+![Architecture diagram](architecture-cases/churn-prediction-credit-card-en.png)
+
+## Implementation walkthrough
+
+### PHASE 01 — Business understanding
+
+Binary churn target, campaign lift as the success lens, and clear definition of what “churn” means in the dataset window.
+
+### PHASE 02 — Data understanding & preparation
+
+EDA on imbalance, correlation and chi-square tests, z-score scaling, one-hot encoding, and stratified train/test split to preserve class ratios.
+
+### PHASE 03 — Model comparison
+
+Train and compare classical and boosting models on validation metrics—AUC-ROC, F1, recall—and inspect calibration curves, not accuracy alone.
+
+### PHASE 04 — Explainability & selection
+
+SHAP values highlight drivers of churn probability for the chosen model, supporting both model selection and marketing narrative.
+
+### PHASE 05 — Deployment artifact
+
+Export `joblib` model and batch-scoring path that outputs the prioritized retention list (documented deployment screenshots in the repo).
+
+## Tech stack deep-dive
+
+### CRISP-DM structure
+
+Shows you can run a full analytics project, not only fit one algorithm.
+
+### XGBoost / LightGBM
+
+Strong baselines on tabular bank-like features with efficient training on imbalanced targets.
+
+### scikit-learn ecosystem
+
+Linear and distance models provide interpretable anchors against complex boosters.
+
+### SHAP
+
+Connects model scores to per-feature contributions—expected in regulated-adjacent retail banking contexts.
+
+### joblib artifact
+
+Practical handoff pattern from notebook to “something CRM could schedule,” even as a portfolio simulation.
 
 ## CRISP-DM methodology
 

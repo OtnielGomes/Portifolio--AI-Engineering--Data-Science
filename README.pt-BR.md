@@ -33,7 +33,7 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 | **Dados e infraestrutura** | PostgreSQL, pgvector, Redis, ChromaDB, Docker Compose, GitHub Actions |
 
 > [!NOTE]
-> As páginas detalhadas de cada projeto (em `projects/`) estão escritas em inglês.
+> Cada projeto tem estudo de caso em português (`projects/<slug>.pt-BR.md`) e em inglês (`projects/<slug>.md`).
 
 ---
 
@@ -41,22 +41,22 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 
 | Projeto | Problema | Stack | Destaque |
 |---|---|---|---|
-| [Extração de Documentos NF-e](projects/nfe-document-extraction.md) | Transformar um DANFE em PDF ou foto em JSON validado e apontar os campos que uma pessoa precisa revisar | LangGraph, OpenAI, LangSmith, Docker | Visão barata, `gpt-6-luna`: acurácia de campo **0,9870** em PDF digital |
-| [AI Customer Support Platform](projects/ai-customer-support-platform.md) | Responder sobre pedidos reais sem alucinar e escalar quando a política impede agir | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Supervisor multi-agente com políticas determinísticas e human-in-the-loop |
-| [AI Agent com Docker](projects/ai-agent-email-docker.md) | Ler a caixa de entrada e redigir e-mails, enviando só depois da confirmação | LangGraph, FastAPI, Next.js, PostgreSQL, Docker | O SMTP só dispara depois que o rascunho é confirmado |
-| [PGD Teletrabalho](projects/pgd-teletrabalho.md) | Responder regras vigentes de teletrabalho a partir do ato em vigor, ou recusar | FastAPI, Next.js, PostgreSQL, Docker | Portão de citação; **89** testes pytest |
-| [Previsão de Churn de Cartão](projects/churn-prediction-credit-card.md) | Identificar clientes de cartão com risco de sair | XGBoost, LightGBM, scikit-learn, SHAP | Pipeline CRISP-DM completo com explicabilidade |
-| [Classificação de Risco de Crédito](projects/credit-risk-classification.md) | Classificar risco de inadimplência no momento da solicitação | PyTorch, Azure Databricks | **71,08%** de AUC-ROC no teste |
+| [Extração de Documentos NF-e](projects/nfe-document-extraction.pt-BR.md) | Transformar um DANFE em PDF ou foto em JSON validado e apontar os campos que uma pessoa precisa revisar | LangGraph, OpenAI, LangSmith, Docker | Visão barata, `gpt-6-luna`: acurácia de campo **0,9870** em PDF digital |
+| [AI Customer Support Platform](projects/ai-customer-support-platform.pt-BR.md) | Responder sobre pedidos reais sem alucinar e escalar quando a política impede agir | LangGraph, FastAPI, Next.js, PostgreSQL/pgvector, Redis | Supervisor multi-agente com políticas determinísticas e human-in-the-loop |
+| [AI Agent com Docker](projects/ai-agent-email-docker.pt-BR.md) | Ler a caixa de entrada e redigir e-mails, enviando só depois da confirmação | LangGraph, FastAPI, Next.js, PostgreSQL, Docker | O SMTP só dispara depois que o rascunho é confirmado |
+| [PGD Teletrabalho](projects/pgd-teletrabalho.pt-BR.md) | Responder regras vigentes de teletrabalho a partir do ato em vigor, ou recusar | FastAPI, Next.js, PostgreSQL, Docker | Portão de citação; **89** testes pytest |
+| [Previsão de Churn de Cartão](projects/churn-prediction-credit-card.pt-BR.md) | Identificar clientes de cartão com risco de sair | XGBoost, LightGBM, scikit-learn, SHAP | Pipeline CRISP-DM completo com explicabilidade |
+| [Classificação de Risco de Crédito](projects/credit-risk-classification.pt-BR.md) | Classificar risco de inadimplência no momento da solicitação | PyTorch, Azure Databricks | **71,08%** de AUC-ROC no teste |
 
 ---
 
 ## Projeto destaque
 
-### [Extração de Documentos NF-e](projects/nfe-document-extraction.md) 📄
+### [Extração de Documentos NF-e](projects/nfe-document-extraction.pt-BR.md) 📄
 
 <p align="center">
-  <a href="projects/nfe-document-extraction.md">
-    <img src="images/nfe-document-extraction/project_cover.png" alt="Extração de Documentos NF-e" width="450">
+  <a href="projects/nfe-document-extraction.pt-BR.md">
+    <img src="projects/covers/nfe-document-extraction/cover.pt.png" alt="Extração de Documentos NF-e" width="450">
   </a>
 </p>
 
@@ -66,17 +66,17 @@ Aberto a oportunidades e colaborações em **AI Engineering, sistemas com LLM e 
 
 **Resultado:** A visão barata adotada, com `gpt-6-luna`, chega a **0,9870** de acurácia de campo em PDF digital a **US$ 0,002035** por nota, e a **0,6420** em foto simulada; a detecção de erro plantado é **1,0000** nos dois casos.
 
-**[Ler o estudo de caso completo →](projects/nfe-document-extraction.md)** · [Repositório](https://github.com/OtnielGomes/NFe-Document-Extraction)
+**[Ler o estudo de caso completo →](projects/nfe-document-extraction.pt-BR.md)** · [Repositório](https://github.com/OtnielGomes/NFe-Document-Extraction)
 
 ---
 
 ## AI Engineering
 
-### [AI Customer Support Platform](projects/ai-customer-support-platform.md) 🎧
+### [AI Customer Support Platform](projects/ai-customer-support-platform.pt-BR.md) 🎧
 
 <p align="center">
-  <a href="projects/ai-customer-support-platform.md">
-    <img src="images/ai-customer-support-platform-with-langgraph/project_cover.png" alt="AI Customer Support Platform" width="450">
+  <a href="projects/ai-customer-support-platform.pt-BR.md">
+    <img src="projects/covers/ai-customer-support-platform/cover.pt.png" alt="AI Customer Support Platform" width="450">
   </a>
 </p>
 
@@ -84,29 +84,29 @@ Um **supervisor LangGraph** identifica a intenção de cada ticket e delega para
 
 São duas interfaces: um Portal do Cliente para o consumidor e um Console de Suporte onde um atendente humano assume o ticket escalado dentro da mesma conversa, com o rastro de ferramentas que o assistente já executou. Publicado na DigitalOcean App Platform, com tracing via OpenTelemetry e Langfuse.
 
-**[Ver detalhes →](projects/ai-customer-support-platform.md)** · [Repositório](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph)
+**[Ver detalhes →](projects/ai-customer-support-platform.pt-BR.md)** · [Repositório](https://github.com/OtnielGomes/AI-Customer-Support-Platform-With-Langgraph)
 
 ---
 
-### [AI Agent com Docker Containers e Python](projects/ai-agent-email-docker.md) 🤖
+### [AI Agent com Docker Containers e Python](projects/ai-agent-email-docker.pt-BR.md) 🤖
 
 <p align="center">
-  <a href="projects/ai-agent-email-docker.md">
-    <img src="images/ai-agent-email/project_cover.png" alt="AI Agent com Docker" width="450">
+  <a href="projects/ai-agent-email-docker.pt-BR.md">
+    <img src="projects/covers/ai-agent-email-docker/cover.pt.png" alt="AI Agent com Docker" width="450">
   </a>
 </p>
 
 O assistente lê a caixa de entrada e prepara um rascunho; o SMTP do Gmail só dispara depois que esse cartão é confirmado. Um **supervisor LangGraph** encaminha pesquisa e e-mail. O Next.js mostra a caixa, o chat e o cartão de revisão; FastAPI e PostgreSQL guardam mensagens e rascunhos. Docker Compose no local; DigitalOcean App Platform em produção.
 
-**[Ver detalhes →](projects/ai-agent-email-docker.md)** · [Repositório](https://github.com/OtnielGomes/AI-Agent-with-Docker-Containers-and-Python)
+**[Ver detalhes →](projects/ai-agent-email-docker.pt-BR.md)** · [Repositório](https://github.com/OtnielGomes/AI-Agent-with-Docker-Containers-and-Python)
 
 ---
 
-### [PGD Teletrabalho](projects/pgd-teletrabalho.md) 📜
+### [PGD Teletrabalho](projects/pgd-teletrabalho.pt-BR.md) 📜
 
 <p align="center">
-  <a href="projects/pgd-teletrabalho.md">
-    <img src="images/pgd-teletrabalho/project_cover.png" alt="PGD Teletrabalho" width="450">
+  <a href="projects/pgd-teletrabalho.pt-BR.md">
+    <img src="projects/covers/pgd-teletrabalho/cover.pt.png" alt="PGD Teletrabalho" width="450">
   </a>
 </p>
 
@@ -114,37 +114,37 @@ Um servidor da Unifesp que pergunta sobre teletrabalho precisa da regra que est�
 
 **89** testes pytest passaram com o rascunho extrativo e a chave de API vazia, incluindo um golden set de **43** itens anotados por uma pessoa. Corte do corpus: **18 de setembro de 2026**.
 
-**[Ver detalhes →](projects/pgd-teletrabalho.md)** · [Repositório](https://github.com/OtnielGomes/Enterprise-Knowledge---RAG-Platform)
+**[Ver detalhes →](projects/pgd-teletrabalho.pt-BR.md)** · [Repositório](https://github.com/OtnielGomes/Enterprise-Knowledge---RAG-Platform)
 
 ---
 
 ## Ciência de Dados
 
-### [Previsão de Churn de Cartão de Crédito](projects/churn-prediction-credit-card.md) 💳
+### [Previsão de Churn de Cartão de Crédito](projects/churn-prediction-credit-card.pt-BR.md) 💳
 
 <p align="center">
-  <a href="projects/churn-prediction-credit-card.md">
-    <img src="images/churn-predction/project_cover.png" alt="Previsão de Churn de Cartão de Crédito" width="450">
+  <a href="projects/churn-prediction-credit-card.pt-BR.md">
+    <img src="projects/covers/churn-prediction-credit-card/cover.pt.png" alt="Previsão de Churn de Cartão de Crédito" width="450">
   </a>
 </p>
 
 Um banco perde receita quando o cliente de cartão sai sem aviso. Pipeline **CRISP-DM** completo — EDA, engenharia de atributos e comparação entre Regressão Logística, SVM, KNN, Random Forest, XGBoost e LightGBM, com divisão estratificada e análise de calibração. Entrega um modelo serializado e uma lista de clientes de alto risco para campanhas de retenção, com SHAP explicando cada previsão.
 
-**[Ver detalhes →](projects/churn-prediction-credit-card.md)** · [Repositório](https://github.com/OtnielGomes/Churn-Prediction-Credit-Card)
+**[Ver detalhes →](projects/churn-prediction-credit-card.pt-BR.md)** · [Repositório](https://github.com/OtnielGomes/Churn-Prediction-Credit-Card)
 
 ---
 
-### [Classificação de Risco de Crédito](projects/credit-risk-classification.md) 💸
+### [Classificação de Risco de Crédito](projects/credit-risk-classification.pt-BR.md) 💸
 
 <p align="center">
-  <a href="projects/credit-risk-classification.md">
-    <img src="images/credit-risk/logoLC.jpeg" alt="Classificação de Risco de Crédito" width="450">
+  <a href="projects/credit-risk-classification.pt-BR.md">
+    <img src="projects/covers/credit-risk-classification/cover.pt.png" alt="Classificação de Risco de Crédito" width="450">
   </a>
 </p>
 
 O risco de inadimplência precisa ser avaliado apenas com o que se sabe antes da aprovação. Uma rede neural em **PyTorch** treinada com dados da LendingClub no **Azure Databricks**, combinada a um classificador de risco em quatro níveis que direciona cada solicitação para aprovação, negação ou reavaliação. **71,08% de AUC-ROC**, 66,42% de acurácia e 63,87% de recall no teste.
 
-**[Ver detalhes →](projects/credit-risk-classification.md)** · [Repositório](https://github.com/OtnielGomes/0_Portfolio-Credit_Risk_Analysis_with_Pytorch)
+**[Ver detalhes →](projects/credit-risk-classification.pt-BR.md)** · [Repositório](https://github.com/OtnielGomes/0_Portfolio-Credit_Risk_Analysis_with_Pytorch)
 
 ---
 

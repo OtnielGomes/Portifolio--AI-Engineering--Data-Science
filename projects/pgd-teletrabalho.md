@@ -2,6 +2,8 @@
 
 [← Back to portfolio](../README.md)
 
+**Language:** English | [Português](pgd-teletrabalho.pt-BR.md)
+
 # PGD Teletrabalho 📜
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
@@ -15,78 +17,93 @@
 
 <div align="center">
   <a href="https://github.com/OtnielGomes/Enterprise-Knowledge---RAG-Platform">
-    <img src="../images/pgd-teletrabalho/project_cover.png" alt="Earlier framing: Enterprise Knowledge RAG Platform" width="900">
+    <img src="covers/pgd-teletrabalho/cover.en.png" alt="pgd-teletrabalho cover" width="900">
   </a>
 </div>
 
-The image above is the earlier framing of this repository. The case below is the Unifesp telework assistant: a dated snapshot, lexical retrieval, and a citation gate.
+RAG-Platform
+imageDir: pgd-teletrabalho
+tech:
+  - Python
+  - FastAPI
+  - Next.js
+  - PostgreSQL
+  - Docker
+  - pytest
+---
 
-**Problem:** A technical-administrative servidor at Unifesp asking about telework cannot trust an unconstrained answer. The reply has to come from the normative act that is actually in force, point at an article a person can open on the PDF page, and refuse when the corpus does not support the claim. A superseded resolution must not be treated as current, and an amendment must not be silently merged into the act it changes.
+# PGD Telework Assistant (Unifesp)
 
-**Solution:** One product seam, **Ask**. The pipeline is fixed: lexical retrieval over a dated snapshot of five numbered acts, a Portuguese draft, then a **deterministic citation gate**. Default retrieval uses Current acts. Resolução CONSU 213/2021 enters only when the question is historical. FastAPI owns Ask, Next.js is a single chat shell, and PostgreSQL holds act and article metadata. The same Compose file runs locally and on a DigitalOcean droplet.
+| | |
+|---|---|
+| **Context** | Independent portfolio |
+| **Timeline** | 2025 — 2026 |
+| **Focus area** | Citation gate & normative RAG |
 
-**Result:** Every surviving claim cites an article that was retrieved, or the response is **Insufficient Evidence**. The snapshot is valid on the corpus cutoff of **18 September 2026**, not against today's gazette. **89** pytest passed with the extractive draft and an empty `OPENAI_API_KEY`, including a human-annotated golden set of **43** items scored through Ask.
+Python · FastAPI · Next.js · PostgreSQL · Docker · pytest
 
-## The snapshot is the source of truth
+## Overview
 
-v1 is this case: one corpus, one Ask seam, citations a person can check. The repository name is leftover from an earlier framing. Leave, reimbursement, contracts, FAQ upload, live gazette crawl, login, and dashboards are out of scope.
+A technical-administrative servidor at Unifesp asking about telework cannot trust an unconstrained answer. The reply must cite the normative act in force, point to an article on the PDF page, and refuse when the corpus does not support the claim. A superseded resolution must not be treated as current, and an amendment must not be silently merged into the act it changes.
 
-The five PDFs are real public law, copied on **18 September 2026** from the Unifesp CONSU archive or from the federal gazette and Planalto. Ask does not invent acts.
+One product seam, **Ask**: lexical retrieval over a dated snapshot of five numbered acts, a Portuguese draft, then a **deterministic citation gate**. Default retrieval uses Current acts; Resolução CONSU 213/2021 enters only for historical questions. FastAPI owns Ask, Next.js is a single chat shell, PostgreSQL holds act and article metadata. The same Compose file runs locally and on a DigitalOcean droplet.
 
-| Normative act | Status | Role |
-|---|---|---|
-| Resolução CONSU 262/2025 | Current | Unifesp telework regulation in force |
-| Decreto 11.072/2022 | Current | Federal PGD framework |
-| IN conjunta 24/2023 | Current | Federal instruction |
-| IN conjunta 21/2024 | Current | Amendment of IN 24; both stay Current |
-| Resolução CONSU 213/2021 | Superseded | Historical questions only |
+Every surviving claim cites a retrieved article, or the response is **Insufficient Evidence**. Corpus cutoff: **18 September 2026**. **89** pytest tests pass with extractive draft and empty `OPENAI_API_KEY`, including a **43**-item golden set scored through Ask.
 
-213 and 262 keep different numbers. They are not versions of one document. IN 21 does not replace IN 24. When both are retrieved, Ask refuses to synthesize a consolidated text and still returns citations for both. When a Unifesp act and a federal act both speak, both citations can appear.
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    Servidor --> Chat[Next.js chat]
-    Chat --> AskAPI[FastAPI Ask]
-    AskAPI --> Retrieve[Lexical retrieve]
-    Retrieve --> Draft[OpenAI or extractive]
-    Draft --> Gate[Citation gate]
-    Gate --> Cited[Cited answer]
-    Gate --> Refuse[Insufficient Evidence]
-    Snapshot[Snapshot PDFs] --> Retrieve
-    Postgres[Postgres metadata] --> AskAPI
-```
+Snapshot PDFs, lexical retrieve, draft, citation gate—no LLM judge on the request path.
 
-| Piece | Role |
-|---|---|
-| FastAPI (`api/`) | Ask, snapshot ingest, retrieve, draft, citation gate |
-| Next.js 15 (`web/`) | One Portuguese chat shell; proxies Ask and the PDFs |
-| `snapshot/` | Five PDFs plus a manifest, copied into the API image |
-| PostgreSQL 16 + pgvector | Act and article metadata |
+![Architecture diagram](architecture-cases/pgd-teletrabalho-en.png)
 
-Retrieval in v1 is **lexical overlap over articles**, not vector search. `pgvector` and an embedding model are part of the runtime slice and are not on the request path. Clicking a citation opens the PDF at that page.
+## Implementation walkthrough
 
-### How a question is answered
+### PHASE 01 — Snapshot ingest and metadata
 
-1. **Retrieve.** Default candidate set is the Current acts. Historical markers add Resolução CONSU 213/2021.
-2. **Draft.** `gpt-4o-mini` writes a Portuguese JSON draft. An empty `OPENAI_API_KEY`, or a failed call, falls back to an extractive draft. Retrieval and the gate do not depend on the chat model.
-3. **Gate.** Deterministic. A citation survives only when its `article_id` was retrieved or its quote is in the article text. Fabricated citations are dropped. If none remain, the response is Insufficient Evidence. There is no LLM-as-judge on the request path.
+Five public PDFs (CONSU 262/2025, federal decrees and instructions, superseded 213/2021) are copied into the API image with a manifest. PostgreSQL stores act status (Current vs Superseded) and article text for retrieval and gate checks.
 
-## What the golden set checks
+### PHASE 02 — Lexical retrieval
 
-Quality is an annotator-owned golden set scored **through Ask**, not traces, RAGAS, or a model judge. The Portuguese set in `eval/golden_set.json` has **43** items, cutoff `2026-09-18`. Scoring uses the expected normative act, the expected article, and `must_abstain`.
+Default candidate set is Current acts only. Historical markers widen the set to include 213/2021. v1 uses lexical overlap on articles—not vector search on the hot path.
 
-| Category | Items | What a failure means |
-|---|---:|---|
-| Easy | 13 | A straight Current-slice question missed its act or article |
-| Temporal, current | 7 | A date or entry-into-force question was treated as something else |
-| Historical | 5 | A pre-262 question failed to allow Resolução 213/2021 |
-| Unanswerable | 8 | An out-of-slice question did not abstain |
-| Amendment conflict | 4 | Ask hid one of IN 24 or IN 21, or invented a consolidated rule |
-| Chefia | 6 | A manager-angle question broke the same contracts; v1 has no approval workflow |
+### PHASE 03 — Draft generation
 
-Default items fail if they treat Resolução 213/2021 as Current. A fabricated citation fails even when the prose looks right. The **89** passing tests cover that set plus the HTTP surface, the CI contract, and the Compose contract, all with the extractive draft.
+`gpt-4o-mini` produces a Portuguese JSON draft when a key is present. Empty key or API failure falls back to an extractive draft. Retrieval and gate do not depend on the chat model.
+
+### PHASE 04 — Deterministic citation gate
+
+A citation survives only if its `article_id` was retrieved or its quote appears in article text. Fabricated citations drop. If none remain, the API returns Insufficient Evidence—no LLM-as-judge.
+
+### PHASE 05 — Tests, CI, and deploy
+
+Golden-set categories (temporal, historical, unanswerable, amendment conflict) run through Ask. CI executes the same **89** tests without OpenAI secrets. Production uses the same `compose.yaml` as local dev.
+
+## Tech stack deep-dive
+
+### FastAPI (`Ask` API)
+
+Single seam for retrieve → draft → gate keeps the contract testable end-to-end.
+
+### Lexical retrieval
+
+Predictable behavior for a small, versioned legal slice beats embedding search before you have eval coverage.
+
+### Citation gate (Python)
+
+Trust is enforced in code; the model only proposes text and citations to be verified.
+
+### Next.js chat shell
+
+Portuguese UI proxies Ask and serves PDFs at cited pages.
+
+### PostgreSQL + pgvector (runtime slice)
+
+Metadata store today; pgvector is in the stack but not on the v1 request path.
+
+### Docker Compose
+
+Local and droplet parity—one file, health checks, snapshot cutoff visible in ops.
 
 ## Screenshots
 
@@ -136,6 +153,6 @@ The droplet runs the same `compose.yaml` as local development. PostgreSQL and As
 </details>
 
 > [!NOTE]
-> Setup, environment variables, and the deploy script live in the [project repository](https://github.com/OtnielGomes/Enterprise-Knowledge---RAG-Platform), which also has a [Portuguese README](https://github.com/OtnielGomes/Enterprise-Knowledge---RAG-Platform/blob/main/README.pt-BR.md).
+> Setup instructions and environment variables live in the [project repository](https://github.com/OtnielGomes/Enterprise-Knowledge---RAG-Platform).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
